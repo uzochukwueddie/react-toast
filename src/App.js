@@ -128,6 +128,8 @@ const App = () => {
       <Toast 
         toastList={list}
         position={position}
+        autoDelete={true}
+        dismissTime={3000}
       />
     </div>
   );
