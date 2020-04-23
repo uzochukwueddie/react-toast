@@ -37,7 +37,9 @@ const BUTTON_PROPS = [
 
 const App = () => {
   const [list, setList] = useState([]);
-  const [position, setPosition] = useState();
+  const [position, setPosition] = useState('Select Position');
+  let [checkValue, setCheckValue] = useState(false);
+  const [autoDeleteTime, setAutoDeleteTime] = useState(0);
   let toastProperties = null;
 
   const selectPosition = (e) => {
@@ -92,6 +94,17 @@ const App = () => {
 
     setList([...list, toastProperties]);
   }
+  
+   const onCheckBoxChange = () => {
+    checkValue = !checkValue;
+    setCheckValue(checkValue);
+    setList([]);
+  }
+
+  const onInputChange = (e) => {
+    const time = parseInt(e.target.value, 10);
+    setDismissTime(time);
+  }
 
   return (
     <div className="app">
@@ -102,12 +115,33 @@ const App = () => {
             BUTTON_PROPS.map(e => 
               <Button 
                 key={e.id}
-                className={e.className}
+                className={`${position === 'Select Position' ? `${e.className} btn-disable` : `${e.className}`}`}
                 label={e.label}
                 handleClick={() => showToast(e.type)}
               />
             )
           }
+        </div>
+
+        <div className="select">
+          <input 
+            id="auto"
+            type="checkbox"
+            name="checkbox"
+            value={checkValue}
+            onChange={onCheckBoxChange}
+          />
+          <label htmlFor="auto">Auto Dismiss</label>
+        </div>
+        <div className="select">
+          <input 
+            className={`${!checkValue ? 'disabled' : ''}`}
+            type="text"
+            name="checkbox"
+            placeholder="Dismiss time Ex: 3000"
+            autoComplete="false"
+            onChange={onInputChange}
+          />
         </div>
         <div className="select">
           <select
@@ -128,8 +162,8 @@ const App = () => {
       <Toast 
         toastList={list}
         position={position}
-        autoDelete={true}
-        dismissTime={3000}
+        autoDelete={checkValue}
+        autoDeleteTime={autoDeleteTime}
       />
     </div>
   );
