@@ -103,7 +103,7 @@ const App = () => {
 
   const onInputChange = (e) => {
     const time = parseInt(e.target.value, 10);
-    setDismissTime(time);
+    setAutoDeleteTime(time);
   }
 
   return (
