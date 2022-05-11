@@ -1,9 +1,9 @@
 Here are the results
 
-![](https://dev-to-uploads.s3.amazonaws.com/i/c2zb5t40whr7o2r36eag.png)
+![](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2z5oayg3wk4ygcz98sxu.png)
 
-![](https://dev-to-uploads.s3.amazonaws.com/i/hbuueujfkst6flrpdjpn.gif)
+![](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/roz4zrh7jppuegba063a.gif)
 
 Auto Delete Toast after 3 Seconds
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/oselx4r0wa5lz64o4mu2.gif)
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/f1hvvu1jtr508nshc48u.gif)
